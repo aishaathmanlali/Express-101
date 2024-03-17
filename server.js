@@ -3,7 +3,8 @@ import express, { request } from "express";
 const app = express();
 
 app.get("/", (request, response) => {
-  response.send("Hello World!");
+  let searchQuery = request.query.search;
+  response.send("Hello World! You searched for" + searchQuery);
 });
 
 app.get("/contact", (request, response) => {
