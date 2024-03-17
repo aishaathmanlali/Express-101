@@ -1,6 +1,28 @@
-import express from "express";
+import express, { request } from "express";
 
 const app = express();
+
+app.get("/", (request, response) => {
+  response.send("Hello World!");
+});
+
+app.get("/contact", (request, response) => {
+  response.send("This is my contact (0778978927)");
+});
+
+app.get("/about", (request, response) => {
+  response.send("My name is Aisha. I am a trainee at Code Your Future. I enjoy my time spending coding and learning new things.");
+});
+
+app.get("/hobbies", (request, response) => {
+  response.send("I love travelling, reading and learning new languages.");
+});
+
+app.get("/nationality", (request, response) => {
+  response.send("I am from Malindi, Kenya");
+});
+
+
 app.listen(3000, () => {
   console.log("Server is listening on port 3000. Ready to accept requests!");
 });
